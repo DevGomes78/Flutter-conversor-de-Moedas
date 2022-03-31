@@ -95,13 +95,13 @@ class _HomeState extends State<Home> {
                           const Icon(Icons.monetization_on,
                               size: 150.0, color: Colors.amber),
                           buildTextField(
-                              "Reais", "R\$", realController, _realChanged),
+                              "Reais", "R\$", realController, _realChanged,TextAlign.center),
                           Divider(),
                           buildTextField("Dólares", "US\$", dolarController,
-                              _dolarChanged),
+                              _dolarChanged,TextAlign.center),
                           Divider(),
                           buildTextField(
-                              "Euros", "€", euroController, _euroChanged),
+                              "Euros", "€", euroController, _euroChanged,TextAlign.center),
                         ],
                       ),
                     );
@@ -116,6 +116,7 @@ Widget buildTextField(
   String prefix,
   TextEditingController c,
   Function(String)? onChanged,
+    TextAlign textAlign,
 ) {
   return TextField(
     controller: c,
@@ -127,5 +128,6 @@ Widget buildTextField(
     style: TextStyle(color: Colors.amber, fontSize: 25.0),
     onChanged: onChanged,
     keyboardType: const TextInputType.numberWithOptions(decimal: true),
+   textAlign: TextAlign.center,
   );
 }
